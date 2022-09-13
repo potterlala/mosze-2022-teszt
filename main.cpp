@@ -4,31 +4,26 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    //N_ELEMENTS eliras!
-    int *b = new int[NELEMENTS];
-    //Szoveg " " koze!
-    std::cout << '1-100 ertekek duplazasa'
-    //hianyzik a feltetel + leptetes: i < N_ELEMENTS; i++
-    for (int i = 0;)
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa\n";
+    //i+1, mert 1-tol indul
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        b[i] = i * 2;
+        b[i] = (i+1) * 2;
     }
-    //hianyzik a feltetel: i < N_ELEMENTS
-    for (int i = 0; i; i++)
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        //hianyzik az ertek kiiratasa: b[i];
-        std::cout << "Ertek:"
-    }    
-    //felesleges kiiratni
-    std::cout << "Atlag szamitasa: " << std::endl;
-    //atlag double!
-    int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++)
+        //lathatosagert atirva
+        std::cout << b[i] << " ";
+    }
+    //atlagnak alapertek!
+    double atlag = 0;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i]
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
-    //hianyzik a memoriafelszabaditas: delete[] b;
+    delete[] b;
     return 0;
 }
